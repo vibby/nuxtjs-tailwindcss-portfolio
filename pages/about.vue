@@ -1,7 +1,15 @@
 <script>
 import feather from "feather-icons";
+import AboutMe from "@/components/about/AboutMe.vue";
+import AboutCounter from "@/components/about/AboutCounter.vue";
+import AboutClients from "@/components/about/AboutClients.vue";
 
 export default {
+  components: {
+    AboutMe,
+    AboutCounter,
+    AboutClients,
+  },
   name: "About",
   scrollToTop: true,
   mounted() {

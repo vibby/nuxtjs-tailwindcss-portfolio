@@ -1,13 +1,19 @@
 <script>
-import { mapState } from "vuex";
+import { mapState } from "pinia";
+import { useMainStore } from "~/store/index";
+import AboutClientSingle from "./AboutClientSingle.vue";
+
 export default {
+  components: {
+    AboutClientSingle,
+  },
   data: () => {
     return {
       // @todo
     };
   },
   computed: {
-    ...mapState(["clientsHeading", "clients"]),
+    ...mapState(useMainStore, ["clientsHeading", "clients"]),
   },
 };
 </script>
