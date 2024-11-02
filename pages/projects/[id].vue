@@ -1,6 +1,9 @@
 <script>
+import { mapState } from "pinia";
+import { useMainStore } from "~/store";
 import feather from "feather-icons";
-import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
+import ProjectRelatedProjects from "~/components/projects/ProjectRelatedProjects.vue";
+
 export default {
   scrollToTop: true,
   data: () => {
@@ -9,8 +12,9 @@ export default {
     };
   },
   computed: {
+    ...mapState(useMainStore, ['getProjectById']),
     project() {
-      return this.$store.getters.getProjectById(this.$route.params.id);
+      return this.getProjectById(this.$route.params.id);
     },
   },
   mounted() {
