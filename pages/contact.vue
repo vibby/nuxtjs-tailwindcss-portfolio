@@ -1,42 +1,29 @@
-<script>
+<script setup>
 import feather from "feather-icons";
 import ContactForm from "@/components/contact/ContactForm.vue";
 import ContactDetails from "@/components/contact/ContactDetails.vue";
 
-export default {
-  components: {
-    ContactForm,
-    ContactDetails,
+const contacts = [
+  {
+    id: 1,
+    name: "Your Address, Your City, Your Country",
+    icon: "map-pin",
   },
-  scrollToTop: true,
-  data: () => {
-    return {
-      contacts: [
-        {
-          id: 1,
-          name: "Your Address, Your City, Your Country",
-          icon: "map-pin",
-        },
-        {
-          id: 2,
-          name: "email@domain.com",
-          icon: "mail",
-        },
-        {
-          id: 3,
-          name: "555 8888 888",
-          icon: "phone",
-        },
-      ],
-    };
+  {
+    id: 2,
+    name: "email@domain.com",
+    icon: "mail",
   },
-  mounted() {
-    feather.replace();
+  {
+    id: 3,
+    name: "555 8888 888",
+    icon: "phone",
   },
-  updated() {
-    feather.replace();
-  },
-};
+]
+
+onMounted(() => {
+  feather.replace();
+});
 </script>
 
 <template>
