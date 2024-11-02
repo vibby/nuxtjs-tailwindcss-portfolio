@@ -1,5 +1,6 @@
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'pinia'
+import { useMainStore } from "~/store/index";
 import HireMeModal from "../HireMeModal.vue";
 import AppNavigation from "./AppNavigation.vue";
 
@@ -16,7 +17,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["categories"]),
+    ...mapState(useMainStore, ['categories']),
   },
   methods: {
     themeSwitcher() {
@@ -61,14 +62,14 @@ export default {
           <NuxtLink to="/">
             <img
               v-if="this.$colorMode.value == 'dark'"
-              src="~/static/logo-light.svg"
+              src="/logo-light.svg"
               class="w-36"
               alt="Light Logo"
             />
 
             <img
               v-else
-              src="~/static/logo-dark.svg"
+              src="/logo-dark.svg"
               alt="Color Logo"
               class="w-36"
             />

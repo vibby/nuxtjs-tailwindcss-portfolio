@@ -146,7 +146,6 @@ export default {
                       "
                       id="subject"
                       name="subject"
-                      type="text"
                       required=""
                       aria-label="Project Category"
                     >

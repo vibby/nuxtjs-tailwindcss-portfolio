@@ -1,5 +1,6 @@
 <script>
-import { mapState } from "vuex";
+import { mapState } from "pinia";
+import { useMainStore } from "~/store/index";
 import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
 export default {
@@ -10,7 +11,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["copyrightDate", "socialProfiles"]),
+    ...mapState(useMainStore, ["copyrightDate", "socialProfiles"]),
   },
   mounted() {
     feather.replace();
@@ -24,26 +25,12 @@ export default {
 <template>
   <div class="container mx-auto">
     <div
-      class="
-        pt-20
-        sm:pt-30
-        pb-8
-        mt-20
-        border-t-2 border-primary-light
-        dark:border-secondary-dark
-      "
+      class="pt-20 pb-8 mt-20 border-t-2 sm:pt-30 border-primary-light dark:border-secondary-dark"
     >
       <!-- Footer social links -->
-      <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
+      <div class="flex flex-col items-center justify-center mb-12 sm:mb-20">
         <p
-          class="
-            font-general-semibold
-            text-3xl
-            sm:text-4xl
-            text-primary-dark
-            dark:text-primary-light
-            mb-5
-          "
+          class="mb-5 text-3xl font-general-semibold sm:text-4xl text-primary-dark dark:text-primary-light"
         >
           Follow me
         </p>
@@ -53,21 +40,9 @@ export default {
             :key="social.id"
             :href="social.url"
             target="__blank"
-            class="
-              text-gray-400
-              hover:text-indigo-500
-              dark:hover:text-indigo-400
-              cursor-pointer
-              rounded-lg
-              bg-gray-50
-              dark:bg-ternary-dark
-              hover:bg-gray-100
-              shadow-sm
-              p-4
-              duration-500
-            "
+            class="p-4 text-gray-400 duration-500 rounded-lg shadow-sm cursor-pointer hover:text-indigo-500 dark:hover:text-indigo-400 bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100"
           >
-            <i :data-feather="social.icon" class="w-6 sm:w-8 h-6 sm:h-8"></i>
+            <i :data-feather="social.icon" class="w-6 h-6 sm:w-8 sm:h-8"></i>
           </a>
         </ul>
       </div>

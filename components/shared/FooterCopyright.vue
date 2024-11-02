@@ -1,5 +1,6 @@
 <script>
-import { mapState } from "vuex";
+import { mapState } from "pinia";
+import { useMainStore } from "~/store/index";
 
 export default {
   data: () => {
@@ -9,45 +10,28 @@ export default {
     };
   },
   computed: {
-    ...mapState(["copyrightDate"]),
+    ...mapState(useMainStore, ['copyrightDate']),
   },
 };
 </script>
 
 <template>
-  <div class="flex justify-center items-center text-center">
+  <div class="flex items-center justify-center text-center">
     <div
-      class="
-        font-general-regular
-        text-lg text-ternary-dark
-        dark:text-ternary-light
-      "
+      class="text-lg font-general-regular text-ternary-dark dark:text-ternary-light"
     >
       &copy; {{ copyrightDate }}.
       <a
         href="https://github.com/realstoman/nuxtjs-tailwindcss-portfolio"
         target="__blank"
-        class="
-          font-general-medium
-          hover:underline hover:text-indigo-600
-          dark:hover:text-indigo-300
-          duration-500
-        "
+        class="duration-500 font-general-medium hover:underline hover:text-indigo-600 dark:hover:text-indigo-300"
         >{{ projectName }}</a
       >
       . Developed by
       <a
         href="https://stoman.me"
         target="__blank"
-        class="
-          font-general-medium
-          text-secondary-dark
-          dark:text-secondary-light
-          uppercase
-          hover:underline hover:text-indigo-600
-          dark:hover:text-indigo-300
-          duration-500
-        "
+        class="uppercase duration-500 font-general-medium text-secondary-dark dark:text-secondary-light hover:underline hover:text-indigo-600 dark:hover:text-indigo-300"
         >{{ author }}</a
       >
     </div>
