@@ -1,30 +1,19 @@
-<script>
-import { mapState } from "pinia";
+<script setup>
 import { useMainStore } from "~/store";
 import feather from "feather-icons";
 import ProjectRelatedProjects from "~/components/projects/ProjectRelatedProjects.vue";
 
-export default {
-  scrollToTop: true,
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ['getProjectById']),
-    project() {
-      return this.getProjectById(this.$route.params.id);
-    },
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-  components: { ProjectRelatedProjects },
-};
+const mainStore = useMainStore();
+const route = useRoute();
+const project = computed(() => mainStore.getProjectById(route.params.id));
+
+onMounted(() => {
+  feather.replace();
+})
+
+onUpdated(() => {
+  feather.replace();
+})
 </script>
 
 <template>
