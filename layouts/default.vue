@@ -19,7 +19,9 @@ onMounted(() => {
     <!-- Render contents with transition -->
     <!-- TODO: transition component will be removed -->
     <!-- <transition name="fade" mode="out-in"> -->
+    <main>
       <slot />
+    </main>
     <!-- </transition> -->
 
     <!-- App footer -->
