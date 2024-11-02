@@ -1,4 +1,4 @@
-const colors = require("tailwindcss/colors");
+import tailwindcssForms from "@tailwindcss/forms";
 
 export default {
   content: [
@@ -36,5 +36,7 @@ export default {
       opacity: ["disabled"],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    tailwindcssForms
+  ],
 };
