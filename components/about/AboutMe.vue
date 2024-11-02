@@ -1,17 +1,8 @@
-<script>
-import { mapState } from "pinia";
+<script setup>
 import { useMainStore } from "~/store/index";
 
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ["aboutMe"]),
-  },
-};
+const mainStore = useMainStore();
+const aboutMe = computed(() => mainStore.aboutMe);
 </script>
 
 <template>

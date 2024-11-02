@@ -1,21 +1,10 @@
-<script>
-import { mapState } from "pinia";
+<script setup>
 import { useMainStore } from "~/store/index";
 import AboutClientSingle from "./AboutClientSingle.vue";
 
-export default {
-  components: {
-    AboutClientSingle,
-  },
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ["clientsHeading", "clients"]),
-  },
-};
+const mainStore = useMainStore();
+const clientsHeading = computed(() => mainStore.clientsHeading);
+const clients = computed(() => mainStore.clients);
 </script>
 
 <template>
