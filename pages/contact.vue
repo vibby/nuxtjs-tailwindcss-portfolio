@@ -24,6 +24,10 @@ const contacts = [
 onMounted(() => {
   feather.replace();
 });
+
+onUpdated(() => {
+  feather.replace();
+});
 </script>
 
 <template>
