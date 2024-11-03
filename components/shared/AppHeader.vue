@@ -1,45 +1,34 @@
-<script>
-import { mapState } from 'pinia'
+<script setup>
 import { useMainStore } from "~/store/index";
 import HireMeModal from "../HireMeModal.vue";
 import AppNavigation from "./AppNavigation.vue";
 
-export default {
-  components: {
-    HireMeModal,
-    AppNavigation,
-  },
-  data: () => {
-    return {
-      isOpen: false,
-      modal: false,
-    };
-  },
+const colorMode = useColorMode()
+const mainStore = useMainStore();
 
-  computed: {
-    ...mapState(useMainStore, ['categories']),
-  },
-  methods: {
-    themeSwitcher() {
-      this.$colorMode.preference =
-        this.$colorMode.value == "light" ? "dark" : "light";
-    },
-    showModal() {
-      if (this.modal) {
-        // Stop screen scrolling
-        document
-          .getElementsByTagName("html")[0]
-          .classList.remove("overflow-y-hidden");
-        this.modal = false;
-      } else {
-        document
-          .getElementsByTagName("html")[0]
-          .classList.add("overflow-y-hidden");
-        this.modal = true;
-      }
-    },
-  },
-};
+const isOpen = ref(false);
+const modal = ref(false);
+const categories = computed(() => mainStore.categories);
+
+function themeSwitcher() {
+  colorMode.preference =
+    colorMode.value === "light" ? "dark" : "light";
+}
+
+function showModal() {
+  if (this.modal) {
+    // Stop screen scrolling
+    document
+      .getElementsByTagName("html")[0]
+      .classList.remove("overflow-y-hidden");
+    modal.value = false;
+  } else {
+    document
+      .getElementsByTagName("html")[0]
+      .classList.add("overflow-y-hidden");
+    modal.value = true;
+  }
+}
 </script>
 
 <template>
@@ -61,7 +50,7 @@ export default {
         <div>
           <NuxtLink to="/">
             <img
-              v-if="this.$colorMode.value == 'dark'"
+              v-if="colorMode.value == 'dark'"
               src="/logo-light.svg"
               class="w-36"
               alt="Light Logo"
@@ -94,7 +83,7 @@ export default {
         >
           <!-- Dark mode icon -->
           <svg
-            v-if="$colorMode.value == 'light'"
+            v-if="colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="
               text-liText-ternary-dark
@@ -217,7 +206,7 @@ export default {
         >
           <!-- Dark mode icon -->
           <svg
-            v-if="$colorMode.value == 'light'"
+            v-if="colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="
               text-liText-ternary-dark

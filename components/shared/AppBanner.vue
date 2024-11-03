@@ -1,20 +1,15 @@
-<script>
+<script setup>
 import feather from "feather-icons";
 
-export default {
-  data: () => {
-    return {
-      // Todo
-    };
-  },
+const colorMode = useColorMode()
 
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-};
+onMounted(() => {
+  feather.replace();
+})
+
+onUpdated(() => {
+  feather.replace();
+})
 </script>
 
 <template>
@@ -103,7 +98,7 @@ export default {
     <!-- Banner right illustration -->
     <div class="w-full md:w-2/3 text-right float-right">
       <img
-        v-if="this.$colorMode.value == 'dark'"
+        v-if="colorMode.value == 'dark'"
         src="/developer-dark.svg"
         alt="Developer Dark"
       />

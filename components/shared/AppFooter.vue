@@ -1,25 +1,20 @@
-<script>
-import { mapState } from "pinia";
+<script setup>
 import { useMainStore } from "~/store/index";
 import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
-export default {
-  components: { FooterCopyright },
-  data: () => {
-    return {
-      // Todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ["copyrightDate", "socialProfiles"]),
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
-};
+
+const mainStore = useMainStore();
+
+const copyRightDate = computed(() => mainStore.copyRightDate);
+const socialProfiles = computed(() => mainStore.socialProfiles);
+
+onMounted(() => {
+  feather.replace();
+})
+
+onUpdated(() => {
+  feather.replace();
+})
 </script>
 
 <template>

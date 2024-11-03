@@ -1,18 +1,12 @@
-<script>
-import { mapState } from "pinia";
+<script setup>
 import { useMainStore } from "~/store/index";
 
-export default {
-  data: () => {
-    return {
-      projectName: "Nuxt.js & Tailwind CSS Portfolio",
-      author: "Stoman",
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ['copyrightDate']),
-  },
-};
+const mainStore = useMainStore();
+
+const projectName = ref("Nuxt.js & Tailwind CSS Portfolio")
+const author = ref("Stoman")
+
+const copyrightDate = computed(() => mainStore.copyrightDate)
 </script>
 
 <template>
