@@ -15,11 +15,11 @@ defineProps({
     type: Array,
     required: true
   }
-})
+});
 
 onMounted(() => {
   feather.replace();
-})
+});
 </script>
 
 <template>

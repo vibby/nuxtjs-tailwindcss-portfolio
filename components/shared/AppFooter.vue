@@ -10,11 +10,11 @@ const socialProfiles = computed(() => mainStore.socialProfiles);
 
 onMounted(() => {
   feather.replace();
-})
+});
 
 onUpdated(() => {
   feather.replace();
-})
+});
 </script>
 
 <template>

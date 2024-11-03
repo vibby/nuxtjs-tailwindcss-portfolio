@@ -1,15 +1,15 @@
 <script setup>
 import feather from "feather-icons";
 
-const colorMode = useColorMode()
+const colorMode = useColorMode();
 
 onMounted(() => {
   feather.replace();
-})
+});
 
 onUpdated(() => {
   feather.replace();
-})
+});
 </script>
 
 <template>

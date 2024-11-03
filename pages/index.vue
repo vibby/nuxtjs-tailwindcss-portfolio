@@ -1,7 +1,7 @@
 <script setup>
 import AppBanner from "~/components/shared/AppBanner.vue";
 import Button from "~/components/reusable/Button.vue";
-import ProjectsGrid from '~/components/projects/ProjectsGrid.vue';
+import ProjectsGrid from "~/components/projects/ProjectsGrid.vue";
 </script>
 
 <template>

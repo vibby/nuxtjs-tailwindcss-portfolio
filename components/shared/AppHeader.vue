@@ -3,7 +3,7 @@ import { useMainStore } from "~/store/index";
 import HireMeModal from "../HireMeModal.vue";
 import AppNavigation from "./AppNavigation.vue";
 
-const colorMode = useColorMode()
+const colorMode = useColorMode();
 const mainStore = useMainStore();
 
 const isOpen = ref(false);
@@ -11,8 +11,8 @@ const modal = ref(false);
 const categories = computed(() => mainStore.categories);
 
 function themeSwitcher() {
-  colorMode.preference =
-    colorMode.value === "light" ? "dark" : "light";
+  colorMode.preference
+    = colorMode.value === "light" ? "dark" : "light";
 }
 
 function showModal() {

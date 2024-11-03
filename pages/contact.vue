@@ -19,7 +19,7 @@ const contacts = [
     name: "555 8888 888",
     icon: "phone",
   },
-]
+];
 
 onMounted(() => {
   feather.replace();

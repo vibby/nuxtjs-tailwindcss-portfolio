@@ -18,15 +18,15 @@ function backToTop() {
 onMounted(() => {
   window.addEventListener("scroll", updateScrollPosition);
   feather.replace();
-})
+});
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", updateScrollPosition);
-})
+});
 
 onUpdated(() => {
   feather.replace();
-})
+});
 </script>
 
 <template>

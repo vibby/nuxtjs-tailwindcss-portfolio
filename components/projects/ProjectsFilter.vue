@@ -13,9 +13,9 @@ defineProps({
       "Branding & Anim",
     ],
   }
-})
+});
 
-const emit = defineEmits(['change'])
+const emit = defineEmits(["change"]);
 </script>
 
 <template>

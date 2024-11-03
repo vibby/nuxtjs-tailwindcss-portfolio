@@ -9,11 +9,11 @@ const project = computed(() => mainStore.getProjectById(route.params.id));
 
 onMounted(() => {
   feather.replace();
-})
+});
 
 onUpdated(() => {
   feather.replace();
-})
+});
 </script>
 
 <template>

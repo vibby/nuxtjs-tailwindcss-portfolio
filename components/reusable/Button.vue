@@ -4,9 +4,9 @@ defineProps({
     type: String,
     required: true,
   }
-})
+});
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(["click"]);
 </script>
 
 <template>

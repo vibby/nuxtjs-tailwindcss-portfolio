@@ -3,10 +3,10 @@ import { useMainStore } from "~/store/index";
 
 const mainStore = useMainStore();
 
-const projectName = ref("Nuxt.js & Tailwind CSS Portfolio")
-const author = ref("Stoman")
+const projectName = ref("Nuxt.js & Tailwind CSS Portfolio");
+const author = ref("Stoman");
 
-const copyrightDate = computed(() => mainStore.copyrightDate)
+const copyrightDate = computed(() => mainStore.copyrightDate);
 </script>
 
 <template>

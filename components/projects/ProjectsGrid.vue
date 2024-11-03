@@ -30,7 +30,7 @@ function filterProjectsByCategory() {
 
 function filterProjectsBySearch() {
   let project = new RegExp(searchProject.value, "i");
-  return projects.value.filter((el) => el.title.match(project));
+  return projects.value.filter(el => el.title.match(project));
 }
 
 onMounted(() => {

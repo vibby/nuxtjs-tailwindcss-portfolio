@@ -1,6 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-export const useMainStore = defineStore('main', {
+export const useMainStore = defineStore("main", {
   state: () => ({
     projectsHeading: "Projects Portfolio",
     projectsDescription: "Some of the projects I have successfully completed",
@@ -216,7 +216,7 @@ export const useMainStore = defineStore('main', {
 
   getters: {
     getProjectById: (state) => {
-      return (id) => state.projects.find((project) => project.id === id);
+      return id => state.projects.find(project => project.id === id);
     },
   },
 

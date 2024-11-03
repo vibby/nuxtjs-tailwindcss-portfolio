@@ -6,7 +6,7 @@ import BackToTop from "../components/BackToTop.vue";
 
 onMounted(() => {
   feather.replace();
-})
+});
 </script>
 
 <template>
@@ -35,7 +35,6 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
 
 <style>
 
