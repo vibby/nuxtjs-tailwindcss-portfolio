@@ -11,6 +11,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      animation: {
+        "spin-slow": "spin 4s linear infinite",
+      },
       colors: {
         "primary-light": "#F7F8FC",
         "secondary-light": "#FFFFFF",

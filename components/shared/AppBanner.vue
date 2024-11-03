@@ -96,14 +96,16 @@ onUpdated(() => {
     </div>
 
     <!-- Banner right illustration -->
-    <div class="w-full md:w-2/3 text-right float-right">
-      <img
-        v-if="colorMode.value == 'dark'"
-        src="/developer-dark.svg"
-        alt="Developer Dark"
-      />
-      <img v-else src="/developer.svg" alt="Developer Light" />
-    </div>
+    <ClientOnly>
+      <div class="w-full md:w-2/3 text-right float-right">
+        <img
+          v-if="colorMode.value == 'dark'"
+          src="/developer-dark.svg"
+          alt="Developer Dark"
+        />
+        <img v-else src="/developer.svg" alt="Developer Light" />
+      </div>
+    </ClientOnly>
   </section>
 </template>
 
