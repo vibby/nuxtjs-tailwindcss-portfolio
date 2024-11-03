@@ -5,7 +5,7 @@ import FooterCopyright from "./FooterCopyright.vue";
 
 const mainStore = useMainStore();
 
-const copyRightDate = computed(() => mainStore.copyRightDate);
+const copyrightDate = computed(() => mainStore.copyrightDate);
 const socialProfiles = computed(() => mainStore.socialProfiles);
 
 onMounted(() => {
