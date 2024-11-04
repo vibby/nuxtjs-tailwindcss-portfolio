@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto py-10">
-    <div class="prose mx-auto">
+    <div class="prose dark:prose-invert mx-auto">
       <ContentList
         path="/articles"
       >

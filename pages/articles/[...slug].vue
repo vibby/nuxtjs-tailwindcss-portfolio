@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto py-10">
-    <article class="prose mx-auto">
+    <article class="prose dark:prose-invert mx-auto">
       <ContentDoc>
         <template v-slot="{ doc }">
           <h1 class="mb-1">{{ doc.title }}</h1>
