@@ -1,4 +1,5 @@
 import tailwindcssForms from "@tailwindcss/forms";
+import tailwindcssTypography from "@tailwindcss/typography";
 
 export default {
   content: [
@@ -40,6 +41,7 @@ export default {
     },
   },
   plugins: [
-    tailwindcssForms
+    tailwindcssForms,
+    tailwindcssTypography
   ],
 };
