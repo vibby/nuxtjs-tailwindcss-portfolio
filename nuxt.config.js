@@ -23,11 +23,13 @@ export default defineNuxtConfig({
 
   // Nuxt 3 automatically handles auto-import of components
   components: {
-    dirs: []
+    dirs: [
+      "~/components/content"
+    ]
   },
 
   // Modules
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@pinia/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@pinia/nuxt", "@nuxt/content"],
 
   colorMode: {
     classSuffix: "",
@@ -41,6 +43,13 @@ export default defineNuxtConfig({
   // Static generation configuration for Nuxt 3
   nitro: {
     preset: "static", // Set this if you want a static site build
+  },
+
+  content: {
+    highlight: {
+      theme: "material-theme-palenight",
+      langs: ["c", "cpp", "java", "js", "css", "html", "json", "vue", "ts"],
+    },
   },
 
   compatibilityDate: "2024-11-02",
