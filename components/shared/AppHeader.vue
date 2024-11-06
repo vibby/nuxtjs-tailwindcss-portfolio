@@ -16,7 +16,7 @@ function themeSwitcher() {
 }
 
 function showModal() {
-  if (this.modal) {
+  if (modal.value) {
     // Stop screen scrolling
     document
       .getElementsByTagName("html")[0]
